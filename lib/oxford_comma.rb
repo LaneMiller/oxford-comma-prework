@@ -1,12 +1,14 @@
 def oxford_comma(array)
+  string = ""
   array.each do |item|
     if array.length == 1
-      array.join
+      string = array.join
     elsif array.length == 2
-      array.join(" and ")
+      string = array.join(" and ")
     elsif array.length > 2
-      array[0...array[-1]].join(", ")
-      array[-1].join(", and ")
+      string = array[0...array[-1]].join(", ")
+      string += array[-1].join(", and ")
     end
   end
+  string
 end
